@@ -109,6 +109,8 @@ def get_stream():
     if start_time.hour != 2:
         get_result()
         
+    print(start_time)
+    print(datetime.datetime.now())
     time.sleep((start_time - datetime.datetime.now()).total_seconds())
     
     timeout = (end_time - datetime.datetime.now()).total_seconds()

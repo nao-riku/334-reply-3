@@ -148,13 +148,11 @@ def get_stream():
         if com_t(times[num], now, times[num + 1]):
             #start_time = datetime.datetime(times[num + 1].year, times[num + 1].month, times[num + 1].day, times[num + 1].hour, times[num + 1].minute, times[num + 1].second + 2)
             end_time = times[num + 1]
-    start_time = datetime.datetime(now.year, now.month, now.day, now.hour, now.minute, now.second)
                 
-    if start_time.hour != 2:
+    if now.hour != 2:
         get_result()
 
-    now = datetime.datetime.now()
-    start_time = datetime.datetime(now.year, now.month, now.day, now.hour, now.minute, now.second) + datetime.timedelta(seconds=2)
+    start_time = datetime.datetime.now() + datetime.timedelta(seconds=2)
     time.sleep((start_time - datetime.datetime.now()).total_seconds())
     
     timeout = (end_time - datetime.datetime.now()).total_seconds()
